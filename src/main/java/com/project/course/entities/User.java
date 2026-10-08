@@ -1,9 +1,16 @@
 package com.project.course.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 public class User implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id1;
     private Long id;
     private String name;
     private String email;
@@ -20,6 +27,14 @@ public class User implements Serializable {
         this.email = email;
         this.phone = phone;
         this.password = password;
+    }
+
+    public Long getId1() {
+        return id1;
+    }
+
+    public void setId1(Long id1) {
+        this.id1 = id1;
     }
 
     public Long getId() {
